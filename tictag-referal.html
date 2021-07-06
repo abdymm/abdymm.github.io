@@ -1,9 +1,9 @@
 <!-- <a href="exp://192.168.1.3:19000/--/path/into/app?from=604b1ed63e92aa00769f53a1&otp=604b1ed63e92aa00769f53a1-TICTAGE" style="font-size: 50px;">Get Referal Code</a> -->
 <script>
     const urlString = window.location.href
-    alert(urlString)
+    // alert(urlString)
     const url = new URL(urlString);
     const code = url.searchParams.get("code");
-    alert(code);
-    window.location.replace("exp://192.168.1.3:19000/--/path/into/app?from=604b1ed63e92aa00769f53a1&otp=604b1ed63e92aa00769f53a1-TICTAGE");
+    // alert(code);
+    window.location.replace(`exp://192.168.1.3:19000/--/path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`);
 </script>
