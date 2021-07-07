@@ -5,5 +5,9 @@
     const url = new URL(urlString);
     const code = url.searchParams.get("code");
     // alert(code);
-    window.location.replace(`tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`);
+    setTimeout(function() {
+        // Link to the App Store should go here -- only fires if deep link fails                
+        window.location = "https://play.google.com/store/apps/details?id=com.arcsys.tictactoe";
+    }, 500);
+    window.location = `tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`
 </script>
