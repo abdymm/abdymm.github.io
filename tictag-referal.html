@@ -1,6 +1,6 @@
 <!-- <a href="exp://192.168.1.3:19000/--/path/into/app?from=604b1ed63e92aa00769f53a1&otp=604b1ed63e92aa00769f53a1-TICTAGE" style="font-size: 50px;">Get Referal Code</a> -->
 <script>
-    alert(navigator.platform)
+    // alert(navigator.platform)
 
     const urlString = window.location.href
     // alert(urlString)
@@ -15,5 +15,5 @@
         }
         // Link to the App Store should go here -- only fires if deep link fails                
     }, 500);
-    // window.location.replace(`tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`)
+    window.location.replace(`tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`)
 </script>
