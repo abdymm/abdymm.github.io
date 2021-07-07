@@ -7,7 +7,7 @@
                 const urlString = window.location.href
                 const url = new URL(urlString);
                 const code = url.searchParams.get("code");
-
+                alert(isIphone)
                 const deepLink = `tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`
                 isIphone ? document.getElementById("iframe").src = deepLink : window.location.replace(deepLink)
 
