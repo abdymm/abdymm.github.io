@@ -4,16 +4,18 @@
         <script type="text/javascript">
             window.onload = function() {
                 const isIphone = navigator.platform.toLowerCase()==='iphone'
-                const urlString = window.location.href
-                const url = new URL(urlString);
-                const code = url.searchParams.get("code");
-                alert(isIphone)
-                const deepLink = `tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`
-                isIphone ? document.getElementById("iframe").src = deepLink : window.location.replace(deepLink)
-
+              
                 setTimeout(function() {      
                     window.location = isIphone ? "https://apps.apple.com/us/app/google-maps/id585027354" : "market://details?id=com.google.android.apps.maps";
                 }, 500);
+
+                alert(isIphone+'new')
+                const urlString = window.location.href
+                const url = new URL(urlString);
+                const code = url.searchParams.get("code");
+                const deepLink = `tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`
+                isIphone ? document.getElementById("iframe").src = deepLink : window.location.replace(deepLink)
+
             };
         </script>
         <iframe id="iframe" width="1" height="1" style="visibility:hidden"></iframe>
