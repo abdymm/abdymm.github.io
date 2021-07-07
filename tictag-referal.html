@@ -1,5 +1,7 @@
 <!-- <a href="exp://192.168.1.3:19000/--/path/into/app?from=604b1ed63e92aa00769f53a1&otp=604b1ed63e92aa00769f53a1-TICTAGE" style="font-size: 50px;">Get Referal Code</a> -->
 <script>
+    alert(navigator.platform)
+
     const urlString = window.location.href
     // alert(urlString)
     const url = new URL(urlString);
@@ -7,7 +9,7 @@
     // alert(code);
     setTimeout(function() {
         // Link to the App Store should go here -- only fires if deep link fails                
-        window.location.replace("http://play.google.com/store/apps/details?id=com.google.android.apps.maps");
+        // window.location.replace("http://play.google.com/store/apps/details?id=com.google.android.apps.maps");
     }, 500);
-    window.location.replace(`tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`)
+    // window.location.replace(`tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`)
 </script>
