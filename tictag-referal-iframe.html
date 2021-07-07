@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            window.onload = function() {
+                
+                const urlString = window.location.href
+                const url = new URL(urlString);
+                const code = url.searchParams.get("code");
+                document.getElementById("iframe").src = `tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`;
+
+                setTimeout(function() {      
+                    if(navigator.platform.toLowerCase()==='iphone') {
+                        window.location = "https://apps.apple.com/us/app/google-maps/id585027354";
+                    } else {
+                        window.location = "market://details?id=com.google.android.apps.maps";
+                    }    
+                }, 500);
+            };
+        </script>
+        <iframe id="iframe" width="1" height="1" style="visibility:hidden"></iframe>
+    </body>
+</html>
