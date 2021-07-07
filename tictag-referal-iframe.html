@@ -3,18 +3,16 @@
     <body>
         <script type="text/javascript">
             window.onload = function() {
-                
+                const isIphone = navigator.platform.toLowerCase()==='iphone'
                 const urlString = window.location.href
                 const url = new URL(urlString);
                 const code = url.searchParams.get("code");
-                document.getElementById("iframe").src = `tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`;
+
+                const deepLink = `tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`
+                isIphone ? document.getElementById("iframe").src = deepLink : window.location.replace(deepLink)
 
                 setTimeout(function() {      
-                    if(navigator.platform.toLowerCase()==='iphone') {
-                        window.location = "https://apps.apple.com/us/app/google-maps/id585027354";
-                    } else {
-                        window.location = "market://details?id=com.google.android.apps.maps";
-                    }    
+                    window.location = isIphone ? "https://apps.apple.com/us/app/google-maps/id585027354" : "market://details?id=com.google.android.apps.maps";
                 }, 500);
             };
         </script>
