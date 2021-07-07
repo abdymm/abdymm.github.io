@@ -8,8 +8,12 @@
     const code = url.searchParams.get("code");
     // alert(code);
     setTimeout(function() {
+        if(navigator.platform.toLowerCase()==='iphone') {
+            window.location.replace("https://apps.apple.com/us/app/google-maps/id585027354");
+        } else {
+            window.location.replace("http://play.google.com/store/apps/details?id=com.google.android.apps.maps");
+        }
         // Link to the App Store should go here -- only fires if deep link fails                
-        // window.location.replace("http://play.google.com/store/apps/details?id=com.google.android.apps.maps");
     }, 500);
     // window.location.replace(`tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`)
 </script>
