@@ -17,7 +17,7 @@
         }
         // Link to the App Store should go here -- only fires if deep link fails                
     }, 500);
-    const deepLink = `tictag://invite/604b1ed63e92aa00769f53a1/${code}`
+    const deepLink = `tictag://invite?from=604b1ed63e92aa00769f53a1&otp=${code}`
     if(isIphone) {
         document.getElementById("iframe").src = deepLink
     } else {
