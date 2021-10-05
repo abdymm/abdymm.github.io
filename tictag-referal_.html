@@ -8,15 +8,21 @@
     // alert(urlString)
     const url = new URL(urlString);
     const code = url.searchParams.get("code");
-    alert(code);
+    // alert(code);
     setTimeout(function() {
         if(isIphone) {
-            window.location = "https://apps.apple.com/us/app/tic-tac-toe/id289278457"
+            window.location.replace("https://apps.apple.com/us/app/tic-tac-toe/id289278457");
         } else {
-            window.location = "market://details?id=io.tictag.app"
+            window.location.replace("market://details?id=io.tictag.app");
         }
         // Link to the App Store should go here -- only fires if deep link fails                
-    }, 25);
+    }, 500);
     const deepLink = `tictag://invite?from=604b1ed63e92aa00769f53a1&otp=${code}`
-    window.location = deepLink
+    if(isIphone) {
+        document.getElementById("iframe").src = deepLink
+    } else {
+        window.location.replace(deepLink)
+    }
+    // window.location.replace(`tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`)
 </script>
+<iframe id="iframe" width="1" height="1" style="visibility:hidden"></iframe>
