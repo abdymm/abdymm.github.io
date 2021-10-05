@@ -14,7 +14,7 @@
                 const url = new URL(urlString);
                 const code = url.searchParams.get("code");
                 const deepLink = `tictag://path/into/app?from=604b1ed63e92aa00769f53a1&otp=${code}`
-                window.location.replace(deepLink)
+                window.location = deepLink
             };
         </script>
     </body>
