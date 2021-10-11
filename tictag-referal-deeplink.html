@@ -7,6 +7,7 @@
     const urlString = window.location.href
     const url = new URL(urlString);
     const code = url.searchParams.get("code");
+    const username = url.searchParams.get("username");
 
     const timeoutAppleStore = setTimeout(function() {
         if(isIphone) {
@@ -17,7 +18,7 @@
         // Link to the App Store should go here -- only fires if deep link fails                
     }, 2500);
     try {
-        const deepLink = `tictag://invite?from=604b1ed63e92aa00769f53a1&otp=${code}`
+        const deepLink = `tictag://invite?username=${username}&otp=${code}`
         window.location.href = deepLink
     } catch (error) {
         console.log(error)
