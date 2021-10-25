@@ -1,5 +1,8 @@
 <!-- https://github.com/abdymm/abdymm.github.io/blob/master/tictag-referal-deeplink.html -->
 <script>
-    alert(navigator.platform);
+    const platform = navigator.platform.toLowerCase()
+    const isIOS = platform === 'iphone' || platform === 'ipad'
+    alert(isIOS)
+
 
 </script>
