@@ -1,34 +1,38 @@
-<!-- <a href="exp://192.168.1.3:19000/--/path/into/app?from=604b1ed63e92aa00769f53a1&otp=604b1ed63e92aa00769f53a1-TICTAGE" style="font-size: 50px;">Get Referal Code</a> -->
+<!-- https://github.com/abdymm/abdymm.github.io/blob/master/tictag-referal-deeplink.html -->
 <script>
-    // alert(navigator.platform)
-    const isIphone = navigator.platform.toLowerCase()==='iphone'
-    window.alert = function() {};
+    alert(navigator.platform);
+    const isIphone = navigator.platform.toLowerCase() === 'iphone'
+    window.alert = function () { };
 
     const urlString = window.location.href
     const url = new URL(urlString);
     const code = url.searchParams.get("code");
     const username = url.searchParams.get("username");
 
-    const timeoutAppleStore = setTimeout(function() {
-        if(isIphone) {
-            window.location = "https://apps.apple.com/us/app/tic-tac-toe/id289278457"
+    const timeoutAppleStore = setTimeout(function () {
+        if (isIphone) {
+            window.location = "https://apps.apple.com/us/app/tictag/id1560830390"
         } else {
             window.location = "market://details?id=io.tictag.app"
         }
-        // Link to the App Store should go here -- only fires if deep link fails                
+        // Link to the App Store should go here -- only fires if deep link fails
     }, 2500);
     try {
-        const deepLink = `tictag://invite?username=${username}&otp=${code}`
+        let deepLink;
+        if (username) {
+            deepLink = `tictag://invite?username=${username}&otp=${code}`
+        } else {
+            deepLink = `tictag://invite?otp=${code}`
+        }
         window.location.href = deepLink
     } catch (error) {
         console.log(error)
     }
 
-    document.addEventListener("visibilitychange", function() {
-        if(document.hidden) {
+    document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
             clearTimeout(timeoutAppleStore)
         }
     });
-    
+
 </script>
-<!-- Maybe here we can also add some loading UI for better ux -->
